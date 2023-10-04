@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/atvdd1.css">
+    <link rel="stylesheet" href="atvdd1.css">
 </head>
 <body>
     <div id="background">
@@ -17,7 +17,7 @@
         </section> <!--header-->
     
         <section id="select">
-        <select name="series" id="series">
+        <select name="series" id="series" onchange="preencherTimes(this)">
             <option value="A">Série A</option>
             <option value="B">Série B</option>
         </select>
@@ -27,8 +27,9 @@
         </section><!--select-->
         
         <section id="form">
-            <form id="Enviar1" method="get" action=""> 
-                <input type="text"><input type="submit" value="Enviar">
+            <form id="Enviar1" method="get" action="" > 
+                <input type="text" placeholder="Porquê você ama seu time...">
+                <input type="submit" value="Enviar">
             </form>
             <form id="Enviar2" method="get" action=""> 
                 <input type="text"><input type="submit" value="Cancelar"><input type="submit" value="Editar">
@@ -39,5 +40,188 @@
         </section><!--form-->
 </div> <!--fim do container-->
 </div> <!--fim background-->
+
+<script>
+    function preencherTimes(){
+        var sigla = series.value
+        var time = document.getElementById("times")
+
+        for (var i = times.children.length -1;i >= 0; i--) {
+            times.removeChild(times.children[i])
+         }
+        
+        switch (sigla){
+            case "A":
+
+                var op1 = document.createElement("option")
+                op1.innerHTML = "Santos"
+                times.appendChild(op1)
+
+                var op2 = document.createElement("option")
+                op2.innerHTML = "São Paulo"
+                times.appendChild(op2)
+
+                var op3 = document.createElement("option")
+                op3.innerHTML = "Vasco"
+                times.appendChild(op3)
+
+                var op4 = document.createElement("option")
+                op4.innerHTML = "Bragantino"
+                times.appendChild(op4)
+
+                var op5 = document.createElement("option")
+                op5.innerHTML = "Palmeiras"
+                times.appendChild(op5)
+
+                var op6 = document.createElement("option")
+                op6.innerHTML = "Internacional"
+                times.appendChild(op6)
+
+                var op7 = document.createElement("option")
+                op7.innerHTML = "Grêmio"
+                times.appendChild(op7)
+
+                var op8 = document.createElement("option")
+                op8.innerHTML = "Goiás"
+                times.appendChild(op8)
+
+                var op9 = document.createElement("option")
+                op9.innerHTML = "Fortaleza"
+                times.appendChild(op9)
+
+                var op10 = document.createElement("option")
+                op10.innerHTML = "Fluminense"
+                times.appendChild(op10)
+
+                var op11 = document.createElement("option")
+                op11.innerHTML = "Flamengo"
+                times.appendChild(op11)
+
+                var op12 = document.createElement("option")
+                op12.innerHTML = "Cuiabá"
+                times.appendChild(op12)
+
+                var op13 = document.createElement("option")
+                op13.innerHTML = "Cruzeiro"
+                times.appendChild(op13)
+
+                var op14 = document.createElement("option")
+                op14.innerHTML = "Coritiba"
+                times.appendChild(op14)
+
+                var op15 = document.createElement("option")
+                op15.innerHTML = "Corinthians"
+                times.appendChild(op15)
+
+                var op16 = document.createElement("option")
+                op.innerHTML = "Botafogo"
+                times.appendChild(op)
+
+                var op17 = document.createElement("option")
+                op17.innerHTML = "Bahia"
+                times.appendChild(op17)
+
+                var op18 = document.createElement("option")
+                op18.innerHTML = "Atlético-MG"
+                times.appendChild(op18)
+
+                var op19 = document.createElement("option")
+                op19.innerHTML = "Athletico-PR"
+                times.appendChild(op19)
+
+                var op20 = document.createElement("option")
+                op20.innerHTML = "América-MG"
+                times.appendChild(op20)
+
+                break
+
+                case "B":
+
+                var op1 = document.createElement("option")
+                op1.innerHTML = "Sport"
+                times.appendChild(op1)
+
+                var op2 = document.createElement("option")
+                op2.innerHTML = "Vitória"
+                times.appendChild(op2)
+
+                var op3 = document.createElement("option")
+                op3.innerHTML = "CRB"
+                times.appendChild(op3)
+
+                var op4 = document.createElement("option")
+                op4.innerHTML = "ABC"
+                times.appendChild(op4)
+
+                var op5 = document.createElement("option")
+                op5.innerHTML = "Atlético-GO"
+                times.appendChild(op5)
+
+                var op6 = document.createElement("option")
+                op6.innerHTML = "Avaí"
+                times.appendChild(op6)
+
+                var op7 = document.createElement("option")
+                op7.innerHTML = "Ceará"
+                times.appendChild(op7)
+
+                var op8 = document.createElement("option")
+                op8.innerHTML = "Botafogo-SP"
+                times.appendChild(op8)
+
+                var op9 = document.createElement("option")
+                op9.innerHTML = "Chapecoense"
+                times.appendChild(op9)
+
+                var op10 = document.createElement("option")
+                op10.innerHTML = "Criciúma"
+                times.appendChild(op10)
+
+                var op11 = document.createElement("option")
+                op11.innerHTML = "Criciúma"
+                times.appendChild(op11)
+
+                var op12 = document.createElement("option")
+                op12.innerHTML = "Ituano"
+                times.appendChild(op12)
+
+                var op13 = document.createElement("option")
+                op13.innerHTML = "Juventude"
+                times.appendChild(op13)
+
+                var op14 = document.createElement("option")
+                op14.innerHTML = "Londrina"
+                times.appendChild(op14)
+
+                var op15 = document.createElement("option")
+                op15.innerHTML = "Mirassol"
+                times.appendChild(op15)
+
+                var op16 = document.createElement("option")
+                op16.innerHTML = "Novorizontino"
+                times.appendChild(op16)
+
+                var op17 = document.createElement("option")
+                op17.innerHTML = "Ponte Preta"
+                times.appendChild(op17)
+
+                var op18 = document.createElement("option")
+                op18.innerHTML = "Sampaio Corrêa"
+                times.appendChild(op18)
+
+                var op19 = document.createElement("option")
+                op19.innerHTML = "Tombense"
+                times.appendChild(op19)
+
+                var op20 = document.createElement("option")
+                op20.innerHTML = "Vila Nova"
+                times.appendChild(op20)
+
+                break
+        }
+
+
+    }
+</script>
 </body>
 </html>
