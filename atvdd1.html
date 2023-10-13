@@ -16,8 +16,9 @@
     
         <section id="select">
         <select name="series" id="series" onchange="preencherTimes(this)">
-            <option value="A">Série A</option>
-            <option value="B">Série B</option>
+            <option value="E">Escolha um campeonato</option>
+            <option value="A">Brasileirão-Série A</option>
+            <option value="B">Brasileirão-Série B</option>
         </select>
         <br>
         <select name="times" id="times"> 
@@ -25,14 +26,19 @@
         </section><!--select-->
         
         <section id="form">
-            <form id="Enviar1" method="get" action="" > 
-                <input type="text" placeholder="Porquê você ama seu time..."><input type="submit" value="Enviar">
+            <form id="Enviar1" method="get" action=""  > 
+                <input type="text" placeholder="Porquê você ama seu time..." id="campoOrigem1">
+                <input type="submit" value="Enviar" onclick="preencherCampos(event)">
             </form>
             <form id="Enviar2" method="get" action=""> 
-                <input type="text"><input type="submit" value="Cancelar"><input type="submit" value="Editar">
+                <input type="text"id="campoDestino1">
+                <input type="submit" value="Cancelar">
+                <input type="submit" value="Editar">
             </form>
             <form id="Enviar3" method="get" action=""> 
-                <input type="text"><input type="submit" value="Cancelar"><input type="submit" value="Editar">
+                <input type="text"id="campoDestino2">
+                <input type="submit" value="Cancelar">
+                <input type="submit" value="Editar">
             </form>
         </section><!--form-->
 </div> <!--fim do container-->
@@ -40,6 +46,7 @@
 
 <script>
     function preencherTimes(){
+
         var sigla = series.value
         var time = document.getElementById("times")
 
@@ -49,6 +56,9 @@
         
         switch (sigla){
             case "A":
+                var op0 = document.createElement("option")
+                op0.innerHTML = "Selecione um time:"
+                times.appendChild(op0)
 
                 var op1 = document.createElement("option")
                 op1.innerHTML = "Santos"
@@ -133,6 +143,10 @@
                 break
 
                 case "B":
+
+                var op0 = document.createElement("option")
+                op0.innerHTML = "Selecione um time:"
+                times.appendChild(op0)
 
                 var op1 = document.createElement("option")
                 op1.innerHTML = "Sport"
@@ -219,6 +233,27 @@
 
 
     }
+    function preencherCampos(){
+        event.preventDefault()
+
+        var series = document.getElementById('series').value
+        var times = document.getElementById('times').value
+
+        var textoEviado = document.getElementById('campoOrigem1');
+        var campoSelec = document.getElementById('campoDestino1');
+        var campoDestinoTexto = document.getElementById('campoDestino2');
+        var select = document.getElementById('select')
+
+        if(series != "E" ){
+        campoSelec.value= "Torço pro " + times + " ele joga na série " + series+ "."
+        }
+
+        campoDestinoTexto.value = textoEviado.value
+        
+        
+
+    }
+
 </script>
 </body>
 </html>
