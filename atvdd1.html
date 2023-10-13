@@ -16,7 +16,7 @@
     
         <section id="select">
         <select name="series" id="series" onchange="preencherTimes(this)">
-            <option value="E">Escolha um campeonato</option>
+            <option id="E" value="E">Escolha um campeonato</option>
             <option value="A">Brasileirão-Série A</option>
             <option value="B">Brasileirão-Série B</option>
         </select>
@@ -26,19 +26,19 @@
         </section><!--select-->
         
         <section id="form">
-            <form id="1" method="get" action=""  > 
+            <form id="0" method="get" action=""  > 
                 <input type="text" placeholder="Porquê você ama seu time..." id="campoOrigem1">
                 <input type="submit" value="Enviar" onclick="preencherCampos(event)">
             </form>
-            <form id="2" method="get" action=""> 
+            <form id="1" method="get" action=""> 
                 <input type="text"id="campoDestino1">
                 <input type="submit" value="Cancelar"  onclick="botaoCancelarD1(event)" >
-                <input type="submit" value="Editar">
+                <input type="submit" value="Editar" onclick="botaoEditarD1(event)">
             </form>
-            <form id="3" method="get" action=""> 
+            <form id="2" method="get" action=""> 
                 <input type="text"id="campoDestino2">
                 <input type="submit" value="Cancelar" onclick="botaoCancelarD2(event)">
-                <input type="submit" value="Editar">
+                <input type="submit" value="Editar" onclick="botaoEditarD2(event)">
             </form>
         </section><!--form-->
 </div> <!--fim do container-->
@@ -249,10 +249,7 @@
         }
 
         campoDestinoTexto.value = textoEviado.value
-        textoEviado.value = " "
-
-
-        
+        textoEviado.value = " "  
 
     }
     function botaoCancelarD1(){
@@ -269,6 +266,26 @@
         campoDestinoTexto.value = " "
 
     }
-</script>
+    function botaoEditarD1(){
+        event.preventDefault()
+        var series = document.getElementById('series')
+        var times = document.getElementById('times')
+        var escolherSerie = document.getElementById('E')
+        var campoSelec = document.getElementById('campoDestino1')
+
+        series.value =  escolherSerie.value
+        times.value = " "
+        campoSelec.value = " "
+    }
+    function botaoEditarD2(){
+        event.preventDefault()
+        var textoEviado = document.getElementById('campoOrigem1')
+        var campoDestinoTexto = document.getElementById('campoDestino2')
+
+        textoEviado.value = campoDestinoTexto.value 
+        campoDestinoTexto.value = " "
+
+    }
+    </script>
 </body>
 </html>
