@@ -26,18 +26,18 @@
         </section><!--select-->
         
         <section id="form">
-            <form id="Enviar1" method="get" action=""  > 
+            <form id="1" method="get" action=""  > 
                 <input type="text" placeholder="Porquê você ama seu time..." id="campoOrigem1">
                 <input type="submit" value="Enviar" onclick="preencherCampos(event)">
             </form>
-            <form id="Enviar2" method="get" action=""> 
+            <form id="2" method="get" action=""> 
                 <input type="text"id="campoDestino1">
-                <input type="submit" value="Cancelar">
+                <input type="submit" value="Cancelar"  onclick="botaoCancelarD1(event)" >
                 <input type="submit" value="Editar">
             </form>
-            <form id="Enviar3" method="get" action=""> 
+            <form id="3" method="get" action=""> 
                 <input type="text"id="campoDestino2">
-                <input type="submit" value="Cancelar">
+                <input type="submit" value="Cancelar" onclick="botaoCancelarD2(event)">
                 <input type="submit" value="Editar">
             </form>
         </section><!--form-->
@@ -239,9 +239,9 @@
         var series = document.getElementById('series').value
         var times = document.getElementById('times').value
 
-        var textoEviado = document.getElementById('campoOrigem1');
-        var campoSelec = document.getElementById('campoDestino1');
-        var campoDestinoTexto = document.getElementById('campoDestino2');
+        var textoEviado = document.getElementById('campoOrigem1')
+        var campoSelec = document.getElementById('campoDestino1')
+        var campoDestinoTexto = document.getElementById('campoDestino2')
         var select = document.getElementById('select')
 
         if(series != "E" ){
@@ -249,11 +249,26 @@
         }
 
         campoDestinoTexto.value = textoEviado.value
-        
+        textoEviado.value = " "
+
+
         
 
     }
+    function botaoCancelarD1(){
+        event.preventDefault()
+        
+        var campoDestinoTexto = document.getElementById('campoDestino1')
+        campoDestinoTexto.value = " "
 
+    }
+    function botaoCancelarD2(){
+        event.preventDefault()
+        
+        var campoDestinoTexto = document.getElementById('campoDestino2')
+        campoDestinoTexto.value = " "
+
+    }
 </script>
 </body>
 </html>
